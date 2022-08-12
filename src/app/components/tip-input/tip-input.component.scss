@@ -1,0 +1,114 @@
+@import "../../../styles.scss";
+
+input:invalid {
+  border-radius: 0.25rem;
+  outline: 2px solid red;
+}
+
+.tip-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 66%;
+
+  .container-bill {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+
+    h2 {
+      font-size: 20px;
+      color: $c-n-dark-grayish-cyan;
+    }
+
+    &-input {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+      }
+
+      input {
+        direction: rtl;
+        width: 100%;
+
+        border: 1px solid $c-n-very-light-grayish-cyan;
+        border-radius: 0.5rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        font-family: $t-family-font;
+        font-size: $t-size-input;
+        color: $c-n-very-dark-cyan;
+      }
+    }
+  }
+
+  .container-tip {
+    display: flex;
+    flex-direction: column;
+
+    @include screen-mobile {
+      flex-grow: 2;
+
+      margin-bottom: 1rem;
+
+      justify-content: space-around;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: $c-n-dark-grayish-cyan;
+    }
+
+    &-input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+
+      button {
+        width: 48%;
+        padding-top: 0.33rem;
+        padding-bottom: 0.33rem;
+
+        font-family: $t-family-font;
+        font-size: $t-size-input;
+        color: $c-n-white;
+
+        background-color: $c-n-very-dark-cyan;
+        border: none;
+        border-radius: 0.5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:focus {
+          background-color: $c-p-strong-cyan;
+          color: $c-n-very-dark-cyan;
+        }
+      }
+
+      input {
+        width: 48%;
+
+        direction: rtl;
+        padding-right: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid $c-n-very-light-grayish-cyan;
+
+        font-family: $t-family-font;
+        font-size: $t-size-input;
+        color: $c-n-very-dark-cyan;
+      }
+    }
+  }
+}

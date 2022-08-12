@@ -1,0 +1,29 @@
+@import "../styles.scss";
+
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $c-n-light-grayish-cyan;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    @include screen-mobile {
+      height: 20vh;
+    }
+  }
+
+  .tip-input-wrapper {
+    background-color: $c-n-white;
+    border-radius: 2rem 2rem 0 0;
+
+    @include screen-mobile {
+      height: 80vh;
+      padding: 2rem;
+    }
+  }
+}
