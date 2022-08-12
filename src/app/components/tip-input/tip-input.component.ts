@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -7,21 +8,36 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./tip-input.component.scss'],
 })
 export class TipInputComponent {
-  @Input() billInputValue: number | null = null;
-  @Input() pplInputValue: string | number = '';
-
   state: {
     billAmt: number;
     tipAmt: number;
     pplAmt: number;
   };
 
-  constructor(private data: DataService) {
+  displayMobileButtons = false;
+  displayDesktopButtons = true;
+
+  constructor(
+    private data: DataService,
+    private breakpointObserver: BreakpointObserver
+  ) {
     this.state = {
       billAmt: 0,
       tipAmt: 0,
       pplAmt: 0,
     };
+
+    this.breakpointObserver
+      .observe(['(max-width: 834px)'])
+      .subscribe((result: BreakpointState) => {
+        if (result.matches) {
+          this.displayMobileButtons = true;
+          this.displayDesktopButtons = false;
+        } else {
+          this.displayMobileButtons = false;
+          this.displayDesktopButtons = true;
+        }
+      });
   }
 
   getBill = (v: string) => {

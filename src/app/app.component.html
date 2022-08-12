@@ -3,8 +3,11 @@
     <img src="../assets/images/logo.svg" alt="SPLITTER" />
   </div>
   <div class="tip-input-wrapper">
-    <app-tip-input></app-tip-input>
-    <app-tip-output (resetClick)="resetEverything()"></app-tip-output>
+    <app-tip-input class="left"></app-tip-input>
+    <app-tip-output
+      class="right"
+      (resetClick)="resetEverything()"
+    ></app-tip-output>
   </div>
   <router-outlet></router-outlet>
 </div>

@@ -12,11 +12,19 @@ input:invalid {
 
   height: 66%;
 
+  @include screen-desktop {
+    height: 100%;
+    width: 100%;
+  }
+
   .container-bill {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
     flex-grow: 1;
+
+    margin-bottom: 1rem;
 
     h2 {
       font-size: 20px;
@@ -32,6 +40,10 @@ input:invalid {
         left: 10%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
+
+        @include screen-desktop {
+          left: 5%;
+        }
       }
 
       input {
@@ -46,6 +58,14 @@ input:invalid {
         font-family: $t-family-font;
         font-size: $t-size-input;
         color: $c-n-very-dark-cyan;
+
+        &:focus {
+          outline: 2px solid $c-p-strong-cyan;
+        }
+
+        @include screen-desktop {
+          border-radius: 0.25rem;
+        }
       }
     }
   }
@@ -53,13 +73,26 @@ input:invalid {
   .container-tip {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 
-    @include screen-mobile {
-      flex-grow: 2;
+    flex-grow: 2;
 
-      margin-bottom: 1rem;
+    margin-bottom: 1rem;
 
-      justify-content: space-around;
+    &-desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      height: 100%;
+    }
+
+    &-mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      height: 100%;
     }
 
     h2 {
@@ -95,6 +128,10 @@ input:invalid {
           background-color: $c-p-strong-cyan;
           color: $c-n-very-dark-cyan;
         }
+
+        @include screen-desktop {
+          width: 30%;
+        }
       }
 
       input {
@@ -108,6 +145,15 @@ input:invalid {
         font-family: $t-family-font;
         font-size: $t-size-input;
         color: $c-n-very-dark-cyan;
+
+        &:focus {
+          outline: 2px solid $c-p-strong-cyan;
+        }
+
+        @include screen-desktop {
+          width: 30%;
+          border-radius: 0.25rem;
+        }
       }
     }
   }

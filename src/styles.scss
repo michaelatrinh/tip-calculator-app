@@ -21,7 +21,13 @@ $t-family-font: "Space Mono", monospace;
 $t-weight: 700;
 
 @mixin screen-mobile {
-  @media (max-width: 428px) {
+  @media (max-width: 834px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop {
+  @media (min-width: 835px) {
     @content;
   }
 }
@@ -34,4 +40,13 @@ $t-weight: 700;
 
 body {
   font-family: $t-family-font;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

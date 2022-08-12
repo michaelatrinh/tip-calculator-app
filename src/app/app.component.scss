@@ -5,6 +5,12 @@
   height: 100vh;
   background-color: $c-n-light-grayish-cyan;
 
+  @include screen-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .logo {
     display: flex;
     justify-content: center;
@@ -15,6 +21,10 @@
     @include screen-mobile {
       height: 20vh;
     }
+
+    @include screen-desktop {
+      height: 25vh;
+    }
   }
 
   .tip-input-wrapper {
@@ -24,6 +34,26 @@
     @include screen-mobile {
       height: 80vh;
       padding: 2rem;
+    }
+
+    @include screen-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      height: 50vh;
+      width: 66vw;
+      padding: 3rem;
+
+      border-radius: 1.5rem;
+      box-shadow: 0 0 1rem 1rem rgba($color: #000000, $alpha: 0.1);
+    }
+
+    .left,
+    .right {
+      @include screen-desktop {
+        width: 48%;
+      }
     }
   }
 }

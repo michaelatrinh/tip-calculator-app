@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -11,7 +12,22 @@ export class TipOutputComponent implements OnInit {
   tipAmountTotalPerPerson: number = 0;
   @Output() resetClick = new EventEmitter();
 
-  constructor(private data: DataService) {}
+  displayDesktopOutputs = true;
+
+  constructor(
+    private data: DataService,
+    private breakpointObserver: BreakpointObserver
+  ) {
+    this.breakpointObserver
+      .observe(['(max-width: 834px)'])
+      .subscribe((result: BreakpointState) => {
+        if (result.matches) {
+          this.displayDesktopOutputs = false;
+        } else {
+          this.displayDesktopOutputs = true;
+        }
+      });
+  }
 
   ngOnInit(): void {
     this.data.newTipAmtPerPerson.subscribe((v) => {

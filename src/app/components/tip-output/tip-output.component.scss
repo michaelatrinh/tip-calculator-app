@@ -12,6 +12,11 @@
     margin-top: 1rem;
   }
 
+  @include screen-desktop {
+    height: 100%;
+    width: 100%;
+  }
+
   .tip-output-container {
     display: flex;
     flex-direction: column;
@@ -23,6 +28,17 @@
     background-color: $c-n-very-dark-cyan;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
+
+    @include screen-desktop {
+      justify-content: space-between;
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 50%;
+    }
 
     .container-total {
       display: flex;
@@ -61,6 +77,10 @@
 
       &:hover {
         cursor: pointer;
+      }
+
+      @include screen-desktop {
+        margin-bottom: 1rem;
       }
     }
   }

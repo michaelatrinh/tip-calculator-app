@@ -11,62 +11,118 @@
         placeholder="0"
         (input)="getBill(bill.value)"
         (input)="getTotals()"
-        value="{{ billInputValue }}"
       />
     </div>
   </div>
 
   <div class="container-tip">
     <h2>Select Tip %</h2>
-    <div class="container-tip-input">
-      <button
-        (click)="getTipPercent(5)"
-        (click)="getTotals()"
-        (click)="customTip.value = ''"
-      >
-        5%
-      </button>
-      <button
-        (click)="getTipPercent(10)"
-        (click)="getTotals()"
-        (click)="customTip.value = ''"
-      >
-        10%
-      </button>
+
+    <!-- display mobile button layout -->
+    <div class="container-tip-mobile" *ngIf="displayMobileButtons">
+      <div class="container-tip-input">
+        <button
+          (click)="getTipPercent(5)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          5%
+        </button>
+        <button
+          (click)="getTipPercent(10)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          10%
+        </button>
+      </div>
+      <div class="container-tip-input">
+        <button
+          (click)="getTipPercent(15)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          15%
+        </button>
+        <button
+          (click)="getTipPercent(25)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          25%
+        </button>
+      </div>
+      <div class="container-tip-input">
+        <button
+          (click)="getTipPercent(50)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          50%
+        </button>
+        <input
+          #customTip
+          type="text"
+          inputmode="numeric"
+          pattern="\d*"
+          placeholder="Custom"
+          (input)="getTipPercent(customTip.value)"
+          (input)="getTotals()"
+        />
+      </div>
     </div>
-    <div class="container-tip-input">
-      <button
-        (click)="getTipPercent(15)"
-        (click)="getTotals()"
-        (click)="customTip.value = ''"
-      >
-        15%
-      </button>
-      <button
-        (click)="getTipPercent(25)"
-        (click)="getTotals()"
-        (click)="customTip.value = ''"
-      >
-        25%
-      </button>
-    </div>
-    <div class="container-tip-input">
-      <button
-        (click)="getTipPercent(50)"
-        (click)="getTotals()"
-        (click)="customTip.value = ''"
-      >
-        50%
-      </button>
-      <input
-        #customTip
-        type="text"
-        inputmode="numeric"
-        pattern="\d*"
-        placeholder="Custom"
-        (input)="getTipPercent(customTip.value)"
-        (input)="getTotals()"
-      />
+
+    <!-- display desktop button layout -->
+    <div class="container-tip-desktop" *ngIf="displayDesktopButtons">
+      <div class="container-tip-input">
+        <button
+          (click)="getTipPercent(5)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          5%
+        </button>
+        <button
+          (click)="getTipPercent(10)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          10%
+        </button>
+        <button
+          (click)="getTipPercent(15)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          15%
+        </button>
+      </div>
+      <div class="container-tip-input">
+        <button
+          (click)="getTipPercent(25)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          25%
+        </button>
+
+        <button
+          (click)="getTipPercent(50)"
+          (click)="getTotals()"
+          (click)="customTip.value = ''"
+        >
+          50%
+        </button>
+        <input
+          #customTip
+          type="text"
+          inputmode="numeric"
+          pattern="\d*"
+          placeholder="Custom"
+          (input)="getTipPercent(customTip.value)"
+          (input)="getTotals()"
+        />
+      </div>
     </div>
   </div>
 
@@ -82,7 +138,6 @@
         placeholder="0"
         (input)="getNumPpl(people.value)"
         (input)="getTotals()"
-        value="{{ pplInputValue }}"
       />
     </div>
   </div>
