@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -14,12 +14,16 @@ export class TipOutputComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
-    this.data.newTipAmtPerPerson.subscribe(
-      (v) => (this.tipAmountPerPerson = v)
-    );
-    this.data.newTotalAmtPerPerson.subscribe(
-      (v) => (this.tipAmountTotalPerPerson = v)
-    );
+    this.data.newTipAmtPerPerson.subscribe((v) => {
+      let fixedV = v.toFixed(2);
+      let numV = Number(fixedV);
+      this.tipAmountPerPerson = numV;
+    });
+    this.data.newTotalAmtPerPerson.subscribe((v) => {
+      let fixedV = v.toFixed(2);
+      let numV = Number(fixedV);
+      this.tipAmountTotalPerPerson = numV;
+    });
   }
 
   onResetClick = () => this.resetClick.emit();

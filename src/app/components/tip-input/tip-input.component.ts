@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./tip-input.component.scss'],
 })
 export class TipInputComponent {
+  @Input() billInputValue: number | null = null;
+  @Input() pplInputValue: string | number = '';
+
   state: {
     billAmt: number;
     tipAmt: number;
