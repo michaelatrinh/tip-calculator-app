@@ -5,9 +5,7 @@
         <h2>Tip Amount</h2>
         <p>/ person</p>
       </div>
-      <div class="container-total-amt">
-        <!-- {{ tipTotal }} -->
-      </div>
+      <div class="container-total-amt">${{ tipAmountPerPerson }}</div>
     </div>
 
     <div class="container-total">
@@ -15,11 +13,9 @@
         <h2>Total</h2>
         <p>/ person</p>
       </div>
-      <div class="container-total-amt">
-        <!-- {{ tipTotal }} -->
-      </div>
+      <div class="container-total-amt">${{ tipAmountTotalPerPerson }}</div>
     </div>
 
-    <button>RESET</button>
+    <button (click)="onResetClick()">RESET</button>
   </div>
 </div>

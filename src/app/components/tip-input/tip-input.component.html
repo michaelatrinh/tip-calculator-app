@@ -3,27 +3,36 @@
     <h2>Bill</h2>
     <div class="container-bill-input">
       <img src="../../../assets/images/icon-dollar.svg" alt="dollar-sign" />
-      <input type="text" inputmode="numeric" pattern="\d*" placeholder="0" />
+      <input
+        #bill
+        type="text"
+        inputmode="numeric"
+        pattern="\d*"
+        placeholder="0"
+        (input)="getBill(bill.value)"
+      />
     </div>
   </div>
 
   <div class="container-tip">
     <h2>Select Tip %</h2>
     <div class="container-tip-input">
-      <button>5%</button>
-      <button>10%</button>
+      <button (click)="getTipPercent(5)">5%</button>
+      <button (click)="getTipPercent(10)">10%</button>
     </div>
     <div class="container-tip-input">
-      <button>15%</button>
-      <button>25%</button>
+      <button (click)="getTipPercent(15)">15%</button>
+      <button (click)="getTipPercent(25)">25%</button>
     </div>
     <div class="container-tip-input">
-      <button>50%</button>
+      <button (click)="getTipPercent(50)">50%</button>
       <input
+        #customTip
         type="text"
         inputmode="numeric"
         pattern="\d*"
         placeholder="Custom"
+        (input)="getTipPercent(customTip.value)"
       />
     </div>
   </div>
@@ -32,7 +41,15 @@
     <h2>Number of People</h2>
     <div class="container-people-input container-bill-input">
       <img src="../../../assets/images/icon-person.svg" alt="person-icon" />
-      <input type="text" inputmode="numeric" pattern="\d*" placeholder="0" />
+      <input
+        #people
+        type="text"
+        inputmode="numeric"
+        pattern="\d*"
+        placeholder="0"
+        (input)="getNumPpl(people.value)"
+        (input)="getTotals()"
+      />
     </div>
   </div>
 </div>
