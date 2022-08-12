@@ -33,10 +33,17 @@
       justify-content: space-between;
     }
 
-    &-top {
+    &-top-desktop {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      height: 50%;
+    }
+
+    &-top-mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 50%;
     }
 
