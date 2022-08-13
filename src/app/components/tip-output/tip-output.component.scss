@@ -1,0 +1,94 @@
+@import "../../../styles.scss";
+
+.tip-output-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 33%;
+
+  @include screen-mobile {
+    margin-top: 1rem;
+  }
+
+  @include screen-desktop {
+    height: 100%;
+    width: 100%;
+  }
+
+  .tip-output-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: $c-n-very-dark-cyan;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    @include screen-desktop {
+      justify-content: space-between;
+    }
+
+    &-top-desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 50%;
+    }
+
+    &-top-mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 50%;
+    }
+
+    .container-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-text {
+        h2 {
+          font-size: 20px;
+          color: $c-n-white;
+        }
+
+        p {
+          font-size: 12px;
+          color: $c-n-grayish-cyan;
+        }
+      }
+
+      &-amt {
+        font-size: 30px;
+        color: $c-p-strong-cyan;
+      }
+    }
+
+    button {
+      font-family: $t-family-font;
+      font-size: $t-size-input;
+      color: $c-n-very-dark-cyan;
+
+      width: 100%;
+      padding: 0.33rem;
+
+      background-color: $c-p-strong-cyan;
+      border: none;
+      border-radius: 0.25rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include screen-desktop {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

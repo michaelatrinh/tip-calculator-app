@@ -1,0 +1,42 @@
+<div class="tip-output-wrapper">
+  <div class="tip-output-container">
+    <!-- display mobile outputs -->
+    <div class="tip-output-container-top-mobile" *ngIf="!displayDesktopOutputs">
+      <div class="container-total">
+        <div class="container-total-text">
+          <h2>Tip Amount</h2>
+          <p>/ person</p>
+        </div>
+        <div class="container-total-amt">${{ tipAmountPerPerson }}</div>
+      </div>
+
+      <div class="container-total">
+        <div class="container-total-text">
+          <h2>Total</h2>
+          <p>/ person</p>
+        </div>
+        <div class="container-total-amt">${{ tipAmountTotalPerPerson }}</div>
+      </div>
+    </div>
+    <!-- display desktop outputs -->
+    <div class="tip-output-container-top-desktop" *ngIf="displayDesktopOutputs">
+      <div class="container-total">
+        <div class="container-total-text">
+          <h2>Tip Amount</h2>
+          <p>/ person</p>
+        </div>
+        <div class="container-total-amt">${{ tipAmountPerPerson }}</div>
+      </div>
+
+      <div class="container-total">
+        <div class="container-total-text">
+          <h2>Total</h2>
+          <p>/ person</p>
+        </div>
+        <div class="container-total-amt">${{ tipAmountTotalPerPerson }}</div>
+      </div>
+    </div>
+
+    <button (click)="onResetClick()">RESET</button>
+  </div>
+</div>

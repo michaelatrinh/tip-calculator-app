@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+// ## Colors
+// ### Primary
+$c-p-strong-cyan: hsl(172, 67%, 45%);
+// ### Neutral
+$c-n-very-dark-cyan: hsl(183, 100%, 15%);
+$c-n-dark-grayish-cyan: hsl(186, 14%, 43%);
+$c-n-grayish-cyan: hsl(184, 14%, 56%);
+$c-n-light-grayish-cyan: hsl(185, 41%, 84%);
+$c-n-very-light-grayish-cyan: hsl(189, 41%, 97%);
+$c-n-white: hsl(0, 0%, 100%);
+
+// ## Typography
+// ### Body Copy
+$t-size-input: 24px;
+// ### Font
+$t-family-font: "Space Mono", monospace;
+$t-weight: 700;
+
+@mixin screen-mobile {
+  @media (max-width: 834px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop {
+  @media (min-width: 835px) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $t-family-font;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
